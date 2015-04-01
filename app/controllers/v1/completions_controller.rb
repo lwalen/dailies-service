@@ -7,4 +7,8 @@ class V1::CompletionsController < V1::BaseController
   def show
     @completion = Completion.find(params[:id])
   end
+
+  def update
+
+  end
 end

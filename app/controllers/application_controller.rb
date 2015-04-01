@@ -24,4 +24,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def current_user
+    User.first
+  end
 end
