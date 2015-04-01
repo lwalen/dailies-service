@@ -1,2 +1,9 @@
-wake_up_completion:
-  task: wake_up
+wake_up_complete:
+  task:         wake_up
+  available_on: 2015-01-01
+  completed_at: 2015-01-01 12:00:00
+
+wake_up_incomplete:
+  task:         wake_up
+  available_on: 2015-01-01
+  completed_at:
