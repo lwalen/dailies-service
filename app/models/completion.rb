@@ -3,7 +3,7 @@ class Completion < ActiveRecord::Base
   belongs_to :task
 
   def complete?
-    completed_at.try(:to_date) == created_at.to_date
+    completed_at.try(:to_date) == available_on.to_date
   end
 
   def complete!
