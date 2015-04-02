@@ -7,3 +7,8 @@ wake_up_incomplete:
   task:         wake_up
   available_on: 2015-01-01
   completed_at:
+
+wake_up_invalid:
+  task:         wake_up
+  available_on: 2015-01-01
+  completed_at: 2015-01-02 12:00:00
