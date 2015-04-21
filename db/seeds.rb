@@ -20,5 +20,5 @@ tasks = Task.create([
   ])
 
 completions = Completion.create([
-    {task: tasks.first}
+    {task: tasks.first, available_on: "2015-01-01"}
   ])
