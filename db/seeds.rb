@@ -14,11 +14,16 @@ users = User.create([
 lars = users.first
 
 tasks = Task.create([
-    {user: lars, name: 'Take a walk'},
-    {user: lars, name: 'Wake up on time'},
-    {user: lars, name: 'Stretch before bed'}
+    {user: lars, name: 'Take a walk', created_at: 1.week.ago },
+    {user: lars, name: 'Wake up on time', created_at: 10.days.ago},
+    {user: lars, name: 'Stretch before bed', created_at: 4.days.ago}
   ])
 
-completions = Completion.create([
-    {task: tasks.first, available_on: "2015-01-01"}
-  ])
+tasks.each do |task|
+  (task.created_at.to_date..Date.today).each do |date|
+    completed_at = [nil, date].sample
+    Completion.create(
+      {task: task, available_on: date, completed_at: completed_at}
+    )
+  end
+end
