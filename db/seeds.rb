@@ -6,24 +6,26 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([
-    {email: 'lars@walen.me'},
-    {email: 'jimmy@example.com'}
-  ])
+if Rails.env.development?
+  users = User.create([
+      {email: 'lars@walen.me'},
+      {email: 'jimmy@example.com'}
+    ])
 
-lars = users.first
+  lars = users.first
 
-tasks = Task.create([
-    {user: lars, name: 'Take a walk', created_at: 1.week.ago },
-    {user: lars, name: 'Wake up on time', created_at: 10.days.ago},
-    {user: lars, name: 'Stretch before bed', created_at: 4.days.ago}
-  ])
+  tasks = Task.create([
+      {user: lars, name: 'Take a walk', created_at: 1.week.ago },
+      {user: lars, name: 'Wake up on time', created_at: 10.days.ago},
+      {user: lars, name: 'Stretch before bed', created_at: 4.days.ago}
+    ])
 
-tasks.each do |task|
-  (task.created_at.to_date..Date.today).each do |date|
-    completed_at = [nil, date].sample
-    Completion.create(
-      {task: task, available_on: date, completed_at: completed_at}
-    )
+  tasks.each do |task|
+    (task.created_at.to_date..Date.today).each do |date|
+      completed_at = [nil, date].sample
+      Completion.create(
+        {task: task, available_on: date, completed_at: completed_at}
+      )
+    end
   end
 end
