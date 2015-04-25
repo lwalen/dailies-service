@@ -27,4 +27,12 @@ class ApplicationController < ActionController::Base
   def current_user
     User.first
   end
+
+  def success
+    {result: 'success'}
+  end
+
+  def failure(message = "")
+    {result: 'failure', message: message}
+  end
 end
