@@ -1,5 +1,5 @@
 json.array! @completions do |completion|
-  json.completion
+  json.completion do
     json.id             completion.id
     json.available_on   completion.available_on
     json.complete       completion.complete?
