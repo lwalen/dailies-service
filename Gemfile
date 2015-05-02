@@ -18,6 +18,9 @@ gem 'versionist'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# User authentication
+gem 'devise'
+
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
 

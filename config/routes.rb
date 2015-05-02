@@ -1,5 +1,6 @@
 DailiesService::Application.routes.draw do
 
+  devise_for :users
   root to: 'static#index', defaults: {format: "json"}
   get '/v1', to: 'static#v1', defaults: {format: "json"}
 
