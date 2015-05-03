@@ -1,7 +1,7 @@
 class V1::TasksController < V1::BaseController
 
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
   end
 
   def show
