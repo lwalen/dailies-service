@@ -1,3 +1,3 @@
-# Happenings Service
+# Dailies Service
 
-A simple app for CRUD-ing events.
+API for [Dailies](http://github.com/lwalen/dailies).
