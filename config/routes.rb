@@ -1,5 +1,7 @@
 DailiesService::Application.routes.draw do
 
+  match '*path', :controller => 'application', :action => 'handle_options_request', via: :options
+
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}, defaults: {format: 'json'}
 
   root to: 'static#index', defaults: {format: "json"}

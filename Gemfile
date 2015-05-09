@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 1.2'
 
 # User authentication
 gem 'devise'
+gem 'devise-token_authenticatable'
+
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 4.0.0'
